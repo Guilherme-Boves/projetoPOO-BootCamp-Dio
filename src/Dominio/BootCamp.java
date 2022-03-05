@@ -1,8 +1,10 @@
 package Dominio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -14,6 +16,32 @@ public class BootCamp {
     private final LocalDate dataFinal = dataInicial.plusDays(45);
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    private List<Curso> cursos = new ArrayList<>();
+    private List<Mentoria> mentorias = new ArrayList<>();
+
+    public void addMentoria(Mentoria mentoria) {
+		this.mentorias.add(mentoria);
+	}
+
+    public List<Curso> getMentorias() {
+        return cursos;
+    }
+
+    public void setMentorias(List<Mentoria> mentorias) {
+        this.mentorias = mentorias;
+    }
+
+    public void addCurso(Curso curso) {
+		this.cursos.add(curso);
+	}
+
+    public List<Curso> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
+    }
 
     public String getNome() {
         return nome;
